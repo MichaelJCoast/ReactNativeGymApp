@@ -16,7 +16,7 @@ export default function Login() {
             <Text style={styles.title}>Isaiah 40:31</Text>
       <TextInput title="Email" placeholder="Email" placeholderTextColor="grey" style={styles.input} />
       <TextInput title="Password" placeholder="Password"  placeholderTextColor="grey" secureTextEntry={true} style={styles.input} />
-      <Button title="Register" onPress={() => navigation.navigate('Home')} />
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
     
      
     </View>
