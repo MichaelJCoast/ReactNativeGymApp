@@ -50,15 +50,8 @@ export default function Settings({ navigation }) {
               thumbColor="#fff"
             />
           </View>
-
-          {/* Go to Split */}
-          <TouchableOpacity 
-            style={styles.button}
-            onPress={() => navigation.navigate('Split')}
-          >
-            <Text style={styles.buttonText}>Edit Training Split</Text>
-          </TouchableOpacity>
-        </View>
+</View>
+         
 
         {/* Back button */}
         <TouchableOpacity 

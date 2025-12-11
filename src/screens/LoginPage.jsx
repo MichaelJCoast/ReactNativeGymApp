@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-gesture-handler';
 
 
-export default function Register() {
+export default function Login() {
   const navigation = useNavigation(); 
 
   return (
@@ -13,11 +13,9 @@ export default function Register() {
           style={styles.background}
         >
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
-      <Text style={styles.subtitle}>Please proceed with your registration!</Text>    
+            <Text style={styles.title}>Isaiah 40:31</Text>
       <TextInput title="Email" placeholder="Email" placeholderTextColor="grey" style={styles.input} />
       <TextInput title="Password" placeholder="Password"  placeholderTextColor="grey" secureTextEntry={true} style={styles.input} />
-      <TextInput title="Age" placeholder="Number" placeholderTextColor="grey" style={styles.input} />
       <Button title="Register" onPress={() => navigation.navigate('Home')} />
     
      
@@ -48,10 +46,10 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: 24,
     color: '#fff',
     marginTop: 10,
-    marginLeft: 45,
+    textAlign :'center',
   },
   buttonsContainer: {
     marginBottom: 50,

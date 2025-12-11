@@ -23,6 +23,9 @@ export default function WelcomeScreen({ navigation }) {
           <TouchableOpacity style={[styles.button, styles.buttonOutline]} onPress={() => navigation.navigate('Register')}>
             <Text style={[styles.buttonText, styles.buttonOutlineText]}>Register</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, styles.buttonOutline]} onPress={() => navigation.navigate('Settings')}>
+            <Text style={[styles.buttonText, styles.buttonOutlineText]}>Settings</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </ImageBackground>
