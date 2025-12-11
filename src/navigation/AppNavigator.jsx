@@ -7,7 +7,8 @@ import RegisterPage from '../screens/Register'
 import SideProfile from '../components/sideprofile';
 import ProfilePage from '../screens/Profile';
 import WelcomeScreen from '../screens/WelcomeScreen';
-
+import Settings from '../screens/Settings';
+import LoginPage from '../screens/LoginPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +26,8 @@ export default function AppNavigator() {
         <Drawer.Screen name="Register" component={RegisterPage} />
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Profile" component={ProfilePage} />
-        
+        <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="Login" component={LoginPage} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
