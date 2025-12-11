@@ -3,8 +3,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen';
-import LoginPage from '../screens/LoginPage';
+import RegisterPage from '../screens/Register'
 import SideProfile from '../components/sideprofile';
+import ProfilePage from '../screens/Profile';
+import WelcomeScreen from '../screens/WelcomeScreen';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -18,8 +21,11 @@ export default function AppNavigator() {
         screenOptions={{ headerShown: false }}
         drawerStyle={{ width: 250 }}
       >
-        <Drawer.Screen name="Login" component={LoginPage} />
+        <Drawer.Screen name="Welcome" component={WelcomeScreen}/>
+        <Drawer.Screen name="Register" component={RegisterPage} />
         <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Profile" component={ProfilePage} />
+        
       </Drawer.Navigator>
     </NavigationContainer>
   );

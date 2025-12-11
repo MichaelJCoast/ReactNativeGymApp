@@ -15,7 +15,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       
       <View style={styles.content}>
-        <Text style={styles.text}>Bem-vindo amigo, estás no sítio certo!</Text>
+        <Text style={styles.text}>Select your split or make one yourself!</Text>
         <Button title="Logout" onPress={() => navigation.navigate('Welcome')} />
       </View>
      
@@ -27,7 +27,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,  
     justifyContent: 'space-between', 
     alignItems: 'center',
     backgroundColor: 'black',

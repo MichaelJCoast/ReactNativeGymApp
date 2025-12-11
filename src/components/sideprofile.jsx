@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import ProfilePage from '../screens/Profile';
 
 // SideProfile should be a presentational component displayed inside screens.
 // The Drawer navigator must be defined at the app/navigation level (e.g. in AppNavigator).
@@ -21,13 +22,19 @@ export default function SideProfile({ onClose, navigation: drawerNavigation }) {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+        <Text 
+        style={styles.title}>Perfil do Utilizador
+        </Text>
+        </TouchableOpacity>
       <TouchableOpacity onPress={handleClose}>
         <Text style={styles.close}>✖</Text>
       </TouchableOpacity>
-      <Text style={styles.title}>Perfil do Utilizador</Text>
+      
       <Text style={styles.item}>Niggus Maximus</Text>
       <Text style={styles.item}>Nível de Gym: Macaco</Text>
       <Text style={styles.item}>Status: Online</Text>
+     
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('Login');
@@ -63,6 +70,7 @@ const styles = StyleSheet.create({
 });
  
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Button } from 'react-native/types_generated/index';
 
 const Drawer = createDrawerNavigator();
 
