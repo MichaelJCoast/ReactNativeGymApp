@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Button, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-gesture-handler';
 
@@ -18,7 +18,9 @@ export default function Register() {
       <TextInput title="Email" placeholder="Email" placeholderTextColor="grey" style={styles.input} />
       <TextInput title="Password" placeholder="Password"  placeholderTextColor="grey" secureTextEntry={true} style={styles.input} />
       <TextInput title="Age" placeholder="Number" placeholderTextColor="grey" style={styles.input} />
-      <Button title="Register" onPress={() => navigation.navigate('Home')} />
+      <TouchableOpacity style={[styles.button]} onPress={() => navigation.navigate('Home')}>
+                        <Text style={[styles.buttonText]}>Register</Text>
+      </TouchableOpacity>
     
      
     </View>
@@ -76,7 +78,16 @@ const styles = StyleSheet.create({
   buttonOutlineText: {
     color: '#fff',
   },
-  input:{
-    height: 40,
-  }
+  input: {
+  width: '100%',
+  height: 50,
+  backgroundColor: 'rgba(255,255,255,0.25)',
+  borderRadius: 30,
+  paddingHorizontal: 20,
+  fontSize: 16,
+  color: '#fff',
+  marginVertical: 10,
+  borderWidth: 1,
+  borderColor: 'rgba(255,255,255,0.6)',
+},
 });

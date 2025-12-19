@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Button, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Footer from '../components/footer';
 
@@ -13,38 +13,50 @@ export default function HomeScreen() {
           style={styles.background}
           >
     <View style={styles.container}>
-      
-      <View style={styles.content}>
-        <Text style={styles.text}>Bem-vindo amigo, estás no sítio certo!</Text>
-        <Button title="Logout" onPress={() => navigation.navigate('Welcome')} />
-      </View>
+              <Text style={styles.title}>Bem-vindo amigo, estás no sítio certo!</Text>
+
+      <TouchableOpacity style={[styles.button]} onPress={() => navigation.navigate('Welcome')}>
+                        <Text style={[styles.buttonText]}>Logout</Text>
+      </TouchableOpacity>
      
       <Footer />
     </View>
-    </ImageBackground>
+        </ImageBackground>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between', 
     alignItems: 'center',
-    backgroundColor: 'black',
+    padding: 20,
   },
   content: {
     flex: 1,
     justifyContent: 'center', 
     alignItems: 'center',
   },
-  text: {
-    fontSize: 16,
+  title: {
+    fontSize: 36,
     color: 'white',
     textAlign: 'center',
-    marginBottom: 20,
+    marginTop: 60,
   },
   background: {
     flex: 1,
     resizeMode: 'cover',
+  },
+  button: {
+    backgroundColor: '#FF9704', // 
+    padding: 15,
+    borderRadius: 30,
+    alignItems: 'center',
+    marginVertical: 12,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '600',
   },
 });
