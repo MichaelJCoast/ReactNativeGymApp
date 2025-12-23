@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Footer from '../components/footer';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 
 export default function HomeScreen() {
@@ -12,6 +14,13 @@ export default function HomeScreen() {
           source={require('../images/gym.jpg')} 
           style={styles.background}
           >
+        <TouchableOpacity
+  onPress={() => navigation.openDrawer()}  
+  style={{ position: 'absolute', top: 40, left: 20 }}
+>
+  <Ionicons name="person-circle-outline" size={36} color="#fff" />
+</TouchableOpacity>
+
     <View style={styles.container}>
               <Text style={styles.title}>Bem-vindo amigo, estás no sítio certo!</Text>
 

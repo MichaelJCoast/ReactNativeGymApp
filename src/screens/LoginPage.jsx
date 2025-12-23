@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, ImageBackground, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-gesture-handler';
+import {Ionicons} from 'react-native-vector-icons';
 
 
 export default function Login() {
@@ -24,6 +25,9 @@ export default function Login() {
       <Text style={styles.text}>Don't have an account?</Text>
     <TouchableOpacity style={[styles.secondarybutton, styles.buttonOutline]} onPress={() => navigation.navigate('Register')}>
                   <Text style={[styles.buttonText, styles.buttonOutlineText]}>Register</Text>
+      </TouchableOpacity>
+       <TouchableOpacity style={[styles.button]} onPress={() => navigation.navigate('Music')}>
+                  <Text style={[styles.buttonText]}>Music</Text>
       </TouchableOpacity>
      
     </View>

@@ -20,16 +20,16 @@ export default function Settings({ navigation }) {
     >
       <SafeAreaView style={styles.container}>
 
-        {/* HEADER */}
+        
         <View style={styles.header}>
           <Text style={styles.title}>Settings</Text>
           <Text style={styles.subtitle}>Customize your holy gains</Text>
         </View>
 
-        {/* SETTINGS BOX */}
+       
         <View style={styles.settingsBox}>
 
-          {/* Notifications */}
+        
           <View style={styles.row}>
             <Text style={styles.rowLabel}>Notifications</Text>
             <Switch
@@ -40,7 +40,7 @@ export default function Settings({ navigation }) {
             />
           </View>
 
-          {/* Dark Mode */}
+         
           <View style={styles.row}>
             <Text style={styles.rowLabel}>Dark Mode</Text>
             <Switch
@@ -53,7 +53,7 @@ export default function Settings({ navigation }) {
 </View>
          
 
-        {/* Back button */}
+      
         <TouchableOpacity 
           style={styles.backButton} 
           onPress={() => navigation.goBack()}
