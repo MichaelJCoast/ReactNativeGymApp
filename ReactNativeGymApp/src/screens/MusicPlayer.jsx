@@ -4,8 +4,8 @@ import Video from 'react-native-video';
 
 const { width } = Dimensions.get('window');
 
-// MUDA PARA A TUA URL DEPOIS DE DEPLOYAR
-const BACKEND_URL = 'https://teu-backend.onrender.com'; // ou localhost:3000 para testar
+
+const BACKEND_URL = 'https://reactnativegymapp.onrender.com'; 
 
 export default function MusicPlayer() {
   const [loading, setLoading] = useState(false);
