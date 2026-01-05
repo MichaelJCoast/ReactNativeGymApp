@@ -37,18 +37,19 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-// Endpoint para pegar URL de streaming
 app.get('/api/stream/:videoId', async (req, res) => {
   try {
     const { videoId } = req.params;
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     
-    if (!ytdl.validateURL(`https://www.youtube.com/watch?v=${videoId}`)) {
+    // Pequeno ajuste na validação
+    if (!ytdl.validateID(videoId)) {
       return res.status(400).json({ error: 'ID de vídeo inválido' });
     }
 
-    const info = await ytdl.getInfo(videoId);
+    const info = await ytdl.getInfo(videoUrl);
     
-    // Pega o melhor formato de áudio
+    // Escolhe o formato de áudio mais leve para carregar rápido no telemóvel
     const audioFormat = ytdl.chooseFormat(info.formats, { 
       quality: 'highestaudio',
       filter: 'audioonly'
@@ -56,13 +57,11 @@ app.get('/api/stream/:videoId', async (req, res) => {
 
     res.json({ 
       url: audioFormat.url,
-      title: info.videoDetails.title,
-      author: info.videoDetails.author.name,
-      thumbnail: info.videoDetails.thumbnails[0].url
+      title: info.videoDetails.title
     });
   } catch (error) {
     console.error('Erro ao pegar stream:', error);
-    res.status(500).json({ error: 'Erro ao pegar áudio' });
+    res.status(500).json({ error: 'YouTube bloqueou o pedido ou vídeo indisponível' });
   }
 });
 
